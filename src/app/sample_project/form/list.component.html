@@ -1,0 +1,12 @@
+<div class="container table_padding">
+    <table border="1">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Edit</th>
+            <tr *ngFor="let list of lists">
+                <td>{{list.name}}</td>
+                <td>{{list.description}}</td>
+                <a routerLink = "/edit/{{list.id}}" (click)="click()">Edit</a>
+            </tr>
+    </table>
+</div>

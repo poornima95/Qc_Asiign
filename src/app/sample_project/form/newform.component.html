@@ -1,0 +1,25 @@
+<div class="container form_padding">
+       <form [formGroup]="newForm">
+           <div class="form-group">
+               <label for="name">Name</label> 
+               <input type="text" class="form-control" name="name" formControlName="name" [ngModel]="model?.name" (ngModelChange)="model.name = $event" >
+           </div>
+          <!--  <div [hidden]="!newForm.controls.name.errors.minlength">
+               Name Minimum Length is {{newForm.controls.name.errors.minlength?.requiredLength}}
+            </div> -->
+           <div class="form-group">
+               <label for="description">Description</label> 
+               <input type="text" class="form-control" name="description" formControlName="description"  [ngModel]="model?.description" (ngModelChange)="model.description = $event" >
+           </div>
+        
+           <div class="form-group"  >
+               
+               <!--  showButton ? '<button (click)="insert()">Submit</button>': '<button (click)="update()">Update</button> '"></div> -->
+                <button (click)="insert()" <!--  *ngIf='showButton' -->>Submit</button>
+                <button (click)="update()" <!--  *ngIf='!showButton' -->>Update</button> 
+                <button (click)="delete()"> Delete </button>
+     
+        
+           </div>
+       </form>
+    </div>
